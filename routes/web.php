@@ -1,13 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Client\HomeController as ClientHomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-  return view('welcome');
-});
+Route::get('/', [ClientHomeController::class, 'index'])->name('/');
 
 Auth::routes([
   'register' => false,
