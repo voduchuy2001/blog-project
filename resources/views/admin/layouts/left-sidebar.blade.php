@@ -1,98 +1,50 @@
-<nav class="navbar navbar-vertical navbar-expand-lg" style="display:none;">
-  <script>
-    var navbarStyle = localStorage.getItem("phoenixNavbarStyle");
-    if (navbarStyle && navbarStyle !== 'transparent') {
-      document.querySelector('body').classList.add(`navbar-${navbarStyle}`);
-    }
-  </script>
-  <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
-    <!-- scrollbar removed-->
-    <div class="navbar-vertical-content">
-      <ul class="navbar-nav flex-column" id="navbarVerticalNav">
-        <li class="nav-item">
-          <!-- label-->
-          <p class="navbar-vertical-label">Mangerment</p>
-          <hr class="navbar-vertical-line" /><!-- parent pages--><span class="nav-item-wrapper"><a
-              class="nav-link label-1" href="documentation/getting-started.html" role="button" data-bs-toggle=""
-              aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                    data-feather="life-buoy"></span></span><span class="nav-link-text-wrapper"><span
-                    class="nav-link-text">Getting started</span></span></div>
-            </a></span><!-- parent pages--><span class="nav-item-wrapper"><a class="nav-link dropdown-indicator label-1"
-              href="#customization" role="button" data-bs-toggle="collapse" aria-expanded="false"
-              aria-controls="customization">
-              <div class="d-flex align-items-center">
-                <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
-                  class="nav-link-icon"><span data-feather="settings"></span></span><span
-                  class="nav-link-text">Customization</span>
-              </div>
-            </a>
-            <div class="parent-wrapper label-1">
-              <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="customization">
-                <p class="collapsed-nav-item-title d-none">Customization</p>
-                <li class="nav-item"><a class="nav-link" href="documentation/customization/styling.html"
-                    data-bs-toggle="" aria-expanded="false">
-                    <div class="d-flex align-items-center"><span class="nav-link-text">Styling</span></div>
-                  </a><!-- more inner pages-->
-                </li>
-                <li class="nav-item"><a class="nav-link" href="documentation/customization/plugin.html"
-                    data-bs-toggle="" aria-expanded="false">
-                    <div class="d-flex align-items-center"><span class="nav-link-text">Plugin</span></div>
-                  </a><!-- more inner pages-->
-                </li>
-              </ul>
-            </div>
-          </span><!-- parent pages--><span class="nav-item-wrapper"><a class="nav-link dropdown-indicator label-1"
-              href="#layouts-doc" role="button" data-bs-toggle="collapse" aria-expanded="false"
-              aria-controls="layouts-doc">
-              <div class="d-flex align-items-center">
-                <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
-                  class="nav-link-icon"><span data-feather="table"></span></span><span class="nav-link-text">Layouts
-                  doc</span>
-              </div>
-            </a>
-            <div class="parent-wrapper label-1">
-              <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="layouts-doc">
-                <p class="collapsed-nav-item-title d-none">Layouts doc</p>
-                <li class="nav-item"><a class="nav-link" href="documentation/layouts/vertical-navbar.html"
-                    data-bs-toggle="" aria-expanded="false">
-                    <div class="d-flex align-items-center"><span class="nav-link-text">Vertical navbar</span></div>
-                  </a><!-- more inner pages-->
-                </li>
-                <li class="nav-item"><a class="nav-link" href="documentation/layouts/horizontal-navbar.html"
-                    data-bs-toggle="" aria-expanded="false">
-                    <div class="d-flex align-items-center"><span class="nav-link-text">Horizontal navbar</span></div>
-                  </a><!-- more inner pages-->
-                </li>
-              </ul>
-            </div>
-          </span><!-- parent pages--><span class="nav-item-wrapper"><a class="nav-link label-1"
-              href="documentation/gulp.html" role="button" data-bs-toggle="" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon font-awesome"><span
-                    class="fa-brands fa-gulp fs-0 ms-1"></span></span><span class="nav-link-text-wrapper"><span
-                    class="nav-link-text">Gulp</span></span></div>
-            </a></span><!-- parent pages--><span class="nav-item-wrapper"><a class="nav-link label-1"
-              href="documentation/design-file.html" role="button" data-bs-toggle="" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                    data-feather="figma"></span></span><span class="nav-link-text-wrapper"><span
-                    class="nav-link-text">Design file</span></span></div>
-            </a></span><!-- parent pages--><span class="nav-item-wrapper"><a class="nav-link label-1"
-              href="changelog.html" role="button" data-bs-toggle="" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                    data-feather="git-merge"></span></span><span class="nav-link-text-wrapper"><span
-                    class="nav-link-text">Changelog</span></span></div>
-            </a></span><!-- parent pages--><span class="nav-item-wrapper"><a class="nav-link label-1"
-              href="showcase.html" role="button" data-bs-toggle="" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                    data-feather="monitor"></span></span><span class="nav-link-text-wrapper"><span
-                    class="nav-link-text">Images Slide</span></span></div>
-            </a></span>
-        </li>
-      </ul>
+<div class="leftside-menu">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo text-center logo-light">
+        <span class="logo-lg">
+            <img src="admin/assets/images/logo-dark.png" alt="" height="16">
+        </span>
+        <span class="logo-sm">
+            <img src="admin/assets/images/logo_sm_dark.png" alt="" height="16">
+        </span>
+    </a>
+    <div class="h-100" id="leftside-menu-container" data-simplebar="">
+
+        <!--- Sidemenu -->
+        <ul class="side-nav">
+
+            <li class="side-nav-title side-nav-item">Manage</li>
+
+            <li class="side-nav-item">
+                <a href="apps-calendar.html" class="side-nav-link">
+                    <i class="uil-tag-alt"></i>
+                    <span> Tags </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="apps-chat.html" class="side-nav-link">
+                    <i class="uil-layer-group"></i>
+                    <span> Categories </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="apps-chat.html" class="side-nav-link">
+                    <i class="uil-book"></i>
+                    <span> Post </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="apps-chat.html" class="side-nav-link">
+                    <i class="uil-atom"></i>
+                    <span> Site settings </span>
+                </a>
+            </li>
+        </ul>
+        <!-- End Sidebar -->
     </div>
-  </div>
-  <div class="navbar-vertical-footer"><button
-      class="btn navbar-vertical-toggle border-0 fw-semi-bold w-100 text-start white-space-nowrap"><span
-        class="uil uil-left-arrow-to-left fs-0"></span><span class="fa-solid fa-right-long-to-line fs-0"></span><span
-        class="navbar-vertical-footer-text ms-2">Collapsed View</span></button></div>
-</nav>
+    <!-- Sidebar -left -->
+</div>
