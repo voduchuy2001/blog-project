@@ -19,7 +19,7 @@
 
                     <!-- Logo -->
                     <div class="auth-brand text-center text-lg-start">
-                        <a href="index.html" class="logo-light">
+                        <a href="/" class="logo-light">
                             <span><img src="admin/assets/images/logo-dark.png" alt="" height="18"></span>
                         </a>
                     </div>

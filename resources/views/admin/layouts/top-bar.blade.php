@@ -18,13 +18,13 @@
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="{{route('user.changeProfile')}}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle me-1"></i>
                     <span>Your Profile</span>
                 </a>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="{{route('user.changePassword')}}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-edit me-1"></i>
                     <span>Change password</span>
                 </a>

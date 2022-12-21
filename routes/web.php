@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\HomeController as ClientHomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -43,4 +44,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
   
       Route::delete('/delete/{id}', 'deleteTag')->name('delete');
     });
+
+    // User
+    Route::prefix('user')->controller(UserController::class)->name('user.')->group(function () {
+      Route::get('/change-profile', 'changeProfile')->name('changeProfile');
+      Route::put('/change-profile/update-profile', 'updateProfile')->name('updateProfile');
+
+      Route::get('/change-password', 'changePassword')->name('changePassword');
+      Route::put('/change-profile/update-password', 'updatePassword')->name('updatePassword');
+  });
 });

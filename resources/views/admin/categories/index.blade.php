@@ -25,11 +25,7 @@
         </div><!-- end col-->
     </div>
 
-    @if (session('message'))
-    <div class="alert alert-success" role="alert">
-        <i class="dripicons-checkmark me-2"></i> {{ session('message') }}
-    </div>
-    @endif
+    @include('admin.components.alert')
 
     <div class="table-responsive mb-3">
         <table class="table table-hover table-centered mb-0 text-center">

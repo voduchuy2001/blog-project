@@ -1,40 +1,42 @@
 @extends('admin.layouts.app')
 @section('content')
-<!-- start page title -->
-<div class="row">
-    <div class="col-12">
-        <div class="page-title-box">
-            <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="">Tag</a></li>
-                    <li class="breadcrumb-item active">Update tag</li>
-                </ol>
+<div class="container">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="">Tag</a></li>
+                        <li class="breadcrumb-item active">Update tag</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Update tag</h4>
             </div>
-            <h4 class="page-title">Update tag</h4>
         </div>
+    </div>
+    <!-- end page title -->
+
+    <form action="{{route('tag.update', ['id' => $tag->id]) }})}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('put')
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mt-3 mb-3">
+                    <input type="text" class="form-control" name="nameTag" placeholder="Tag name" maxlength="32"
+                        value="{{ $tag->nameTag }}">
+                    @error('nameTag')
+                    <span class="text-danger"> {{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+</div>
+<div class="form-group">
+    <div class="text-center mb-3">
+        <button class="btn btn-success btn-sm">Update</button>
     </div>
 </div>
-<!-- end page title -->
-
-<form action="{{route('tag.update', ['id' => $tag->id]) }})}}" method="POST" enctype="multipart/form-data">
-    @csrf
-    @method('put')
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="mt-3 mb-3">
-                <input type="text" class="form-control" name="nameTag" placeholder="Tag name" maxlength="32"
-                    value="{{ $tag->nameTag }}">
-                @error('nameTag')
-                <span class="text-danger"> {{ $message }}</span>
-                @enderror
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="form-group">
-        <div class="text-center mb-3">
-            <button class="btn btn-success btn-sm">Update</button>
-        </div>
-    </div>
 </form>
+</div>
 @endsection
