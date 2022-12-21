@@ -24,6 +24,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-3 mb-3">
+                    <label for="nameCat" class="form-label">Category name</label>
                     <input type="text" class="form-control" name="nameCat" placeholder="Category name" maxlength="32"
                         value="{{ $category->nameCat }}">
                     @error('nameCat')
@@ -32,20 +33,21 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="fImageCat" class="form-label">Featured image</label>
                     <input type="file" accept="image/*" class="form-control" name="fImageCat"
                         value="{{ $category->fImageCat }}">
                     @error('fImageCat')
                     <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <div class="text-center mb-3">
+                        <button class="btn btn-success btn-sm">Update</button>
+                    </div>
+                </div>
             </div>
         </div>
-</div>
-<div class="form-group">
-    <div class="text-center mb-3">
-        <button class="btn btn-success btn-sm">Update</button>
-    </div>
-</div>
-</form>
+    </form>
 </div>
 @endsection

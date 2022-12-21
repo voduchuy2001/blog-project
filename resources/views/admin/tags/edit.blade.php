@@ -23,20 +23,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-3 mb-3">
+                    <label for="nameTag" class="form-label">Tag name</label>
                     <input type="text" class="form-control" name="nameTag" placeholder="Tag name" maxlength="32"
                         value="{{ $tag->nameTag }}">
                     @error('nameTag')
                     <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <div class="text-center mb-3">
+                        <button class="btn btn-success btn-sm">Update</button>
+                    </div>
+                </div>
             </div>
         </div>
-</div>
-<div class="form-group">
-    <div class="text-center mb-3">
-        <button class="btn btn-success btn-sm">Update</button>
-    </div>
-</div>
-</form>
+    </form>
 </div>
 @endsection

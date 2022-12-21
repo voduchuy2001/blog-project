@@ -30,8 +30,8 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="apps-chat.html" class="side-nav-link">
+            <li class="side-nav-item {{ request()->routeIs('post.*') ? 'menuitem-active' : '' }}">
+                <a href="{{route('post.list')}}" class="side-nav-link">
                     <i class="uil-book"></i>
                     <span> Post </span>
                 </a>

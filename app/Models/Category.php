@@ -14,4 +14,9 @@ class Category extends Model
         'slugCat',
         'fImageCat',
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
