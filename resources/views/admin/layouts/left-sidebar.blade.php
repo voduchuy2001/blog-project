@@ -1,7 +1,7 @@
 <div class="leftside-menu">
 
     <!-- LOGO -->
-    <a href="index.html" class="logo text-center logo-light">
+    <a href="{{route('home')}}" class="logo text-center logo-light">
         <span class="logo-lg">
             <img src="admin/assets/images/logo-dark.png" alt="" height="16">
         </span>
@@ -16,15 +16,15 @@
 
             <li class="side-nav-title side-nav-item">Manage</li>
 
-            <li class="side-nav-item">
-                <a href="apps-calendar.html" class="side-nav-link">
+            <li class="side-nav-item {{ request()->routeIs('tag.*') ? 'menuitem-active' : '' }}">
+                <a href="{{route('tag.list')}}" class="side-nav-link">
                     <i class="uil-tag-alt"></i>
                     <span> Tags </span>
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="apps-chat.html" class="side-nav-link">
+            <li class="side-nav-item {{ request()->routeIs('category.*') ? 'menuitem-active' : '' }}">
+                <a href="{{route('category.list')}}" class="side-nav-link">
                     <i class="uil-layer-group"></i>
                     <span> Categories </span>
                 </a>

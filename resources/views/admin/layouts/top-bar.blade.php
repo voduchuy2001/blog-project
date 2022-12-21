@@ -7,7 +7,7 @@
                     <img src="admin/assets/images/avt.png" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
-                    <span class="account-user-name">Mai Huong</span>
+                    <span class="account-user-name">{{Auth::user()->fullName}}</span>
                     <span class="account-position">Admin</span>
                 </span>
             </a>
