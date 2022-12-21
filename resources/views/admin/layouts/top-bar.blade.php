@@ -36,7 +36,7 @@
                         @csrf
                     </form>
                     <i class=" uil-sign-out-alt text-danger"></i>
-                    <span class="text-danger">Đăng xuất</span>
+                    <span class="text-danger">Log out</span>
                 </a>
             </div>
         </li>

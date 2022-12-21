@@ -16,9 +16,9 @@
 </div>
 <!-- end page title -->
 
-<form action="{{route('tag.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('tag.update', ['id' => $tag->id]) }})}}" method="POST" enctype="multipart/form-data">
     @csrf
-
+    @method('put')
     <div class="row">
         <div class="col-lg-12">
             <div class="mt-3 mb-3">
