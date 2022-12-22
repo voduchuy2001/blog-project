@@ -7,18 +7,18 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="">Post</a></li>
-                        <li class="breadcrumb-item active">Post list</li>
+                        <li class="breadcrumb-item"><a href="">Search</a></li>
+                        <li class="breadcrumb-item active">Search: {{$query}}</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Post list</h4>
+                <h4 class="page-title">Search: {{$query}}</h4>
             </div>
         </div>
     </div>
     <!-- end page title -->
     <div class="row mb-2">
         <div class="col-xl-8">
-            <form action="admin/search/post-results"
+            <form action="admin/search/category-results"
                 class="row gy-2 gx-2 align-items-center justify-content-xl-start justify-content-between">
                 <div class="col-auto">
                     <input type="search" class="form-control" name="query" placeholder="Enter key words...">
@@ -27,8 +27,8 @@
         </div>
         <div class="col-xl-4">
             <div class="text-xl-end mt-xl-0 mt-2">
-                <a href="{{route('post.create')}}" class="btn btn-success">New
-                    Post</a>
+                <a href="{{route('category.create')}}" class="btn btn-success">New
+                    Category</a>
             </div>
         </div><!-- end col-->
     </div>
@@ -40,45 +40,28 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Title</th>
+                    <th>Name</th>
                     <th>Featured Image</th>
-                    <th>Category</th>
-                    <th>Tags</th>
-                    <th>Status</th>
+                    <th>Posts of Category</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @if ($posts->count()>0)
-                @foreach ($posts as $post)
+                @if ($categories->count()>0)
+                @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $post->id }}</td>
-                    <td>{{ $post->postTitle }}</td>
+                    <td>{{ $category->id }}</td>
+                    <td>{{ $category->nameCat }}</td>
                     <td>
-                        <img class="avatar-lg rounded" src="{{ $post->fImagePost }}" alt="Image">
+                        <img class="avatar-lg rounded" src="{{ $category->fImageCat }}" alt="Image">
                     </td>
                     <td>
-                        <a class="badge bg-light text-info rounded-pill"
-                            href="{{ route('category.edit', $post->category->id) }}">{{$post->category->nameCat}}
-                        </a>
-                    </td>
-                    <td>
-                        @foreach ($post->tags as $tag)
-                        <a href="{{ route('tag.edit', ['id' => $tag->id]) }}"><span
-                                class="badge badge-success-lighten rounded-pill">{{ $tag->nameTag }}</span></a>
-                        @endforeach
-                    </td>
-                    <td>
-                        @if ($post->status == 'featured')
-                        <a class="btn btn-danger btn-sm badge badge-danger-lighten rounded-pill">Featured</a>
-                        @else
-                        <a class="btn btn-info btn-sm badge badge-info-lighten rounded-pill">Non featured</a>
-                        @endif
+                        {{$category->posts->count()}}
                     </td>
                     <td class="table-action">
-                        <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="action-icon"><button
+                        <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="action-icon"><button
                                 class="btn btn-warning btn-sm"><i class="uil-edit-alt"></i></button></a>
-                        <button class="btn btn-danger btn-sm" onclick="handleDeletePost({{$post->id}})"><i
+                        <button class="btn btn-danger btn-sm" onclick="handleDeleteCategory({{$category->id}})"><i
                                 class="uil-trash-alt"></i>
                         </button>
                     </td>
@@ -92,14 +75,13 @@
             </tbody>
         </table>
     </div>
-
-    {{$posts->links('admin.components.pagination')}}
+    {{$categories->links('admin.components.pagination')}}
 
     <!-- Modal delete -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
         aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog" role="document">
-            <form action="" method="POST" id="deletePostForm">
+            <form action="" method="POST" id="deleteCategoryForm">
                 @csrf
                 @method('delete')
                 <div class="modal-content">

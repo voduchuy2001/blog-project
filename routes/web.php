@@ -6,6 +6,9 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\HomeController as ClientHomeController;
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +21,8 @@ Auth::routes([
 ]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-  
- Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+  Route::get('/home', [HomeController::class, 'index'])->name('home');
 
   // Category
   Route::prefix('category')->controller(CategoryController::class)->name('category.')->group(function () {
@@ -68,5 +71,28 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/change-password', 'changePassword')->name('changePassword');
     Route::put('/change-profile/update-password', 'updatePassword')->name('updatePassword');
   });
-});
 
+  // Search Post
+  Route::get('/search/post-results', function () {
+    $posts = Post::orderBy('created_at', 'desc')->where('postTitle', 'like', '%' . request('query') . '%')
+      ->paginate(10);
+
+    return view('admin.components.post-results', compact('posts'))->with('query', request('query'));
+  });
+
+  // Search Tag
+  Route::get('/search/tag-results', function () {
+    $tags = Tag::orderBy('created_at', 'desc')->where('nameTag', 'like', '%' . request('query') . '%')
+      ->paginate(10);
+
+    return view('admin.components.tag-results', compact('tags'))->with('query', request('query'));
+  });
+
+  // Search Post
+  Route::get('/search/category-results', function () {
+    $categories = Category::orderBy('created_at', 'desc')->where('nameCat', 'like', '%' . request('query') . '%')
+      ->paginate(10);
+
+    return view('admin.components.category-results', compact('categories'))->with('query', request('query'));
+  });
+});

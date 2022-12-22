@@ -25,10 +25,19 @@
             <div class="tab-pane show active" id="input-types-preview">
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input placeholder="Email" id="email" type="email" readonly class="form-control" name="email"
+                                value="{{$user->email}}">
+                            @error('email')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
 
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full name</label>
-                            <input required placeholder="Full name" id="fullName" type="text" class="form-control"
+                            <input placeholder="Full name" id="fullName" type="text" class="form-control"
                                 name="fullName" value="{{$user->fullName}}">
                             @error('fullName')
                             <span class="text-danger"> {{ $message }}</span>

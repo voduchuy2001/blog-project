@@ -7,11 +7,11 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="">Post</a></li>
-                        <li class="breadcrumb-item active">Post list</li>
+                        <li class="breadcrumb-item"><a href="">Search</a></li>
+                        <li class="breadcrumb-item active">Search: {{$query}}</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Post list</h4>
+                <h4 class="page-title">Search: {{$query}}</h4>
             </div>
         </div>
     </div>

@@ -17,7 +17,15 @@
     </div>
     <!-- end page title -->
     <div class="row mb-2">
-        <div class="col-xl-12">
+        <div class="col-xl-8">
+            <form action="admin/search/category-results"
+                class="row gy-2 gx-2 align-items-center justify-content-xl-start justify-content-between">
+                <div class="col-auto">
+                    <input type="search" class="form-control" name="query" placeholder="Enter key words...">
+                </div>
+            </form>
+        </div>
+        <div class="col-xl-4">
             <div class="text-xl-end mt-xl-0 mt-2">
                 <a href="{{route('category.create')}}" class="btn btn-success">New
                     Category</a>

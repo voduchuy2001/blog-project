@@ -20,11 +20,13 @@ class UserController extends Controller
     public function updateProfile(Request $request)
     {
         $this->validate($request, [
-            'fullName' => 'required', 'string', 'max:255',
+            'fullName' => 'required|string|max:35',
+            'email' => 'required|email|unique:users',
         ]);
 
         $user = Auth::user();
 
+        $user->email = $request->email;
         $user->fullName = $request->fullName;
         $user->facebookContact = $request->facebookContact;
         $user->instagramContact = $request->instagramContact;
