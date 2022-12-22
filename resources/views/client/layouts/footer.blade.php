@@ -18,7 +18,7 @@
                                 <div class="header-info-mid">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="index.html"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                                        <a href="/"><img src="client/assets/img/logo/logo.png" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -33,16 +33,13 @@
                                 <div class="main-menu text-center">
                                     <nav>
                                         <ul>
-                                            <li><a href="category.html">Lifestyle</a></li>
-                                            <li><a href="category.html">Business</a></li>
-                                            <li><a href="category.html">Fashion</a></li>
-                                            <li><a href="category.html">Design</a></li>
-                                            <li><a href="category.html">Health</a></li>
-                                            <li><a href="category.html">Harmful</a></li>
-                                            <li><a href="category.html">Technology</a></li>
-                                            <li><a href="category.html">Travel</a></li>
-                                            <li><a href="category.html">Food</a></li>
-                                            <li><a href="category.html">Creative</a></li>
+                                            @foreach ($categories as $category)
+                                            <li>
+                                                <a
+                                                    href="{{route('category.single',['slugCat' => $category->slugCat])}}">{{$category->nameCat}}
+                                                </a>
+                                            </li>
+                                            @endforeach
                                         </ul>
                                     </nav>
                                 </div>

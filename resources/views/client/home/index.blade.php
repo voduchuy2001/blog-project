@@ -6,5 +6,5 @@
 
     @include('client.components.category-slide')
 
-    @include('client.components.trending-post')
+    @include('client.components.popular-post')
 @endsection

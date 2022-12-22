@@ -55,6 +55,12 @@ class PostController extends Controller
             'metaTitle' => $request->metaTitle,
         ]);
 
+        if ($request->status == 'featured') {
+            $post->status = 'featured';
+        } else {
+            $post->status = 'non-featured';
+        }
+
         $post->tags()->attach($request->tags);
         $post->save();
         return redirect()->route('post.list')->with(['success' => 'Create post: ' . $post->postTitle . ' success!']);
@@ -122,5 +128,24 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->back()->with(['success' => 'Delete post: ' . $post->postTitle . ' success!']);
+    }
+
+    public function featuredPost($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->status = 'featured';
+        $post->save();
+
+        return redirect()->back()->with(['success' => 'Set: ' . $post->postTitle . ' featured success!']);
+    }
+
+    public function normalPost($id)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->status = 'non-featured';
+        $post->save();
+
+        return redirect()->back()->with(['success' => 'Unset: ' . $post->postTitle . ' featured success!']);
     }
 }

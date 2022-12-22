@@ -8,17 +8,19 @@
                         <div class="header-info-left">
                             <li class="d-none d-lg-block">
                                 <div class="form-box f-right ">
-                                    <input type="text" name="Search" placeholder="Search your interest...">
-                                    <div class="search-icon">
-                                        <i class="ti-search"></i>
-                                    </div>
+                                    <form action="/ket-qua" method="get">
+                                        <input type="text" name="query" placeholder="Nhập tiêu đề bài viết...">
+                                        <div class="search-icon">
+                                            <i class="ti-search"></i>
+                                        </div>
+                                    </form>
                                 </div>
                             </li>
                         </div>
                         <div class="header-info-mid">
                             <!-- logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                                <a href="/"><img src="client/assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="header-info-right d-flex align-items-center">
@@ -48,20 +50,27 @@
                     <div class="col-12">
                         <!-- logo 2 -->
                         <div class="logo2">
-                            <a href="index.html"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                            <a href="/"><img src="client/assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <!-- logo 3 -->
                         <div class="logo3 d-block d-sm-none">
-                            <a href="index.html"><img src="client/assets/img/logo/logo-mobile.png" alt=""></a>
+                            <a href="/"><img src="client/assets/img/logo/logo-mobile.png" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu text-center d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
                                     @foreach ($categories as $category)
-                                    <li><a href="category.html">{{$category->nameCat}}</a></li>
+                                    <li><a
+                                            href="{{route('category.single',['slugCat' => $category->slugCat])}}">{{$category->nameCat}}</a>
+                                    </li>
                                     @endforeach
-                                    <li><input class="d-lg-none" type="text" placeholder="Enter title..."></li>
+                                    <li>
+                                        <form action="/ket-qua" method="get">
+                                            <input class="d-lg-none" type="text" name="query"
+                                                placeholder="Nhập tiêu đề bài viết...">
+                                        </form>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>

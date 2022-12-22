@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ClientHomeController::class, 'index'])->name('/');
+Route::get('/bai-viet/{slugPost}', [ClientHomeController::class, 'singlePost'])->name('post.single');
+Route::get('/danh-muc/{slugCat}', [ClientHomeController::class, 'categoryPost'])->name('category.single');
+Route::get('/the/{slugTag}', [ClientHomeController::class, 'tagPost'])->name('tag.single');
+Route::get('/ket-qua', function () {
+  $categories = Category::all();
+  $posts = Post::orderBy('created_at', 'desc')->where('postTitle', 'like', '%' . request('query') . '%')
+    ->paginate(10);
+
+  return view('client.components.result-posts', compact('posts', 'categories'))->with('query', request('query'));
+});
 
 Auth::routes([
   'register' => false,
@@ -61,6 +71,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::put('/update/{id}', 'updatePost')->name('update');
 
     Route::delete('/delete/{id}', 'deletePost')->name('delete');
+
+    Route::get('/featured-post/{id}', 'featuredPost')->name('featuredPost');
+    Route::get('/normal-post/{id}', 'normalPost')->name('normalPost');
   });
 
   // User

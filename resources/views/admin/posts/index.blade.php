@@ -70,9 +70,11 @@
                     </td>
                     <td>
                         @if ($post->status == 'featured')
-                        <a class="btn btn-danger btn-sm badge badge-danger-lighten rounded-pill">Featured</a>
+                        <a href="{{route('post.normalPost', ['id' => $post->id])}}"
+                            class="btn btn-danger btn-sm badge badge-danger-lighten rounded-pill">Featured</a>
                         @else
-                        <a class="btn btn-info btn-sm badge badge-info-lighten rounded-pill">Non featured</a>
+                        <a href="{{route('post.featuredPost', ['id' => $post->id])}}"
+                            class="btn btn-info btn-sm badge badge-info-lighten rounded-pill">Non featured</a>
                         @endif
                     </td>
                     <td class="table-action">
