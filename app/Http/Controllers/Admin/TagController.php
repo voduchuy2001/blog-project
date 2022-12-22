@@ -33,7 +33,7 @@ class TagController extends Controller
             'slugTag' => Str::slug($request->nameTag),
         ]);
 
-        return redirect()->route('tag.list')->with(['message' => 'Create tag: ' . $tag->nameTag . ' success!']);
+        return redirect()->route('tag.list')->with(['success' => 'Create tag: ' . $tag->nameTag . ' success!']);
     }
 
     public function editTag($id)
@@ -54,15 +54,19 @@ class TagController extends Controller
         $tag->slugTag = Str::slug($request->nameTag);
         $tag->save();
 
-        return redirect()->route('tag.list')->with(['message' => 'Update tag: ' . $tag->nameTag . ' success!']);
+        return redirect()->route('tag.list')->with(['success' => 'Update tag: ' . $tag->nameTag . ' success!']);
     }
 
     public function deleteTag($id)
     {
         $tag = Tag::findOrFail($id);
-        
-        $tag->delete();
 
-        return redirect()->route('tag.list')->with(['message' => 'Delete tag: ' . $tag->nameTag . ' success!']);
+        if ($tag->posts->count() > 0) {
+            return redirect()->back()->with('warning', 'Can not delete tag: ' . $tag->nameTag . '. Please delete related posts!');
+        } else {
+            $tag->delete();
+
+            return redirect()->route('tag.list')->with(['success' => 'Delete tag: ' . $tag->nameTag . ' success!']);
+        }
     }
 }

@@ -44,7 +44,7 @@
                     <td>{{ $tag->id }}</td>
                     <td>{{ $tag->nameTag }}</td>
                     <td>
-                        {{-- {{$tag->posts->count()}} --}}
+                        {{$tag->posts->count()}}
                     </td>
                     <td class="table-action">
                         <a href="{{ route('tag.edit', ['id' => $tag->id]) }}" class="action-icon"><button

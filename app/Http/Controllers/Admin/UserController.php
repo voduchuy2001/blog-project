@@ -35,7 +35,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with("message", "Update profile success!");
+        return redirect()->back()->with('success', 'Update profile success!');
     }
 
     public function changePassword()
@@ -56,13 +56,13 @@ class UserController extends Controller
         );
 
         if (!Hash::check($request->old_password, auth()->user()->password)) {
-            return back()->with("error", "Old password is incorrect!");
+            return back()->with('error', 'Old password is incorrect!');
         }
 
         User::whereId(auth()->user()->id)->update([
             'password' => Hash::make($request->password)
         ]);
 
-        return redirect()->back()->with("message", "Update password success!");
+        return redirect()->back()->with('success', 'Update password success!');
     }
 }

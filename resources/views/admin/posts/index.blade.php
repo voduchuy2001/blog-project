@@ -36,6 +36,7 @@
                     <th>Featured Image</th>
                     <th>Category</th>
                     <th>Tags</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -59,10 +60,17 @@
                                 class="badge badge-success-lighten rounded-pill">{{ $tag->nameTag }}</span></a>
                         @endforeach
                     </td>
+                    <td>
+                        @if ($post->status == 'featured')
+                        <a class="btn btn-danger btn-sm badge badge-danger-lighten rounded-pill">Featured</a>
+                        @else
+                        <a class="btn btn-info btn-sm badge badge-info-lighten rounded-pill">Non featured</a>
+                        @endif
+                    </td>
                     <td class="table-action">
                         <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="action-icon"><button
                                 class="btn btn-warning btn-sm"><i class="uil-edit-alt"></i></button></a>
-                        <button class="btn btn-danger btn-sm" onclick="handleDeleteCategory({{$post->id}})"><i
+                        <button class="btn btn-danger btn-sm" onclick="handleDeletePost({{$post->id}})"><i
                                 class="uil-trash-alt"></i>
                         </button>
                     </td>
@@ -83,7 +91,7 @@
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
         aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog" role="document">
-            <form action="" method="POST" id="deleteCategoryForm">
+            <form action="" method="POST" id="deletePostForm">
                 @csrf
                 @method('delete')
                 <div class="modal-content">

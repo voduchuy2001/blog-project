@@ -24,7 +24,7 @@ class PostController extends Controller
         $tags = Tag::all();
 
         if ($categories->count() == 0 || $tags->count() == 0) {
-            return redirect()->back()->with("warning", "Please add categories and tags before adding posts!");
+            return redirect()->back()->with('warning', 'Please add categories and tags before adding posts!');
         }
 
         return view('admin.posts.create', compact('categories', 'tags'));
@@ -57,7 +57,7 @@ class PostController extends Controller
 
         $post->tags()->attach($request->tags);
         $post->save();
-        return redirect()->route('post.list')->with(['message' => 'Create post: ' . $post->postTitle . ' success!']);
+        return redirect()->route('post.list')->with(['success' => 'Create post: ' . $post->postTitle . ' success!']);
     }
 
     public function editPost($id)
@@ -74,24 +74,22 @@ class PostController extends Controller
         $this->validate($request, [
             'postTitle' => 'required',
             'postContent' => 'required',
-            'fImagePost' => 'required|image',
             'category_id' => 'required',
             'tags' => 'required',
         ]);
 
         $post = Post::findOrFail($id);
 
-        $oldFeatured = $post->featured_image;
-        // Update new image path
-        if ($request->featured_image != '') {
-            File::delete($post->featured_image);
-            $featured_image = $request->featured_image;
+        $oldFeatured = $post->fImagePost;
+        if ($request->fImagePost) {
+            File::delete($post->fImagePost);
+            $featured_image = $request->fImagePost;
             $featured_image_new_name = time() . $featured_image->getClientOriginalName();
             $featured_image->move('uploads/posts/', $featured_image_new_name);
 
-            $post->featured_image = 'uploads/posts/' . $featured_image_new_name;
+            $post->fImagePost = 'uploads/posts/' . $featured_image_new_name;
         } else {
-            $post->featured_image = $oldFeatured;
+            $post->fImagePost = $oldFeatured;
         }
 
         if ($request->status == 'featured') {
@@ -114,6 +112,15 @@ class PostController extends Controller
         $post->tags()->sync($request->tags);
 
         $post->save();
-        return redirect()->route('post.list')->with(['message' => 'Update post: ' . $post->postTitle . ' success!']);
+        return redirect()->route('post.list')->with(['success' => 'Update post: ' . $post->postTitle . ' success!']);
+    }
+
+    public function deletePost($id)
+    {
+        $post = Post::findOrFail($id);
+        File::delete($post->fImagePost);
+        $post->delete();
+
+        return redirect()->back()->with(['success' => 'Delete post: ' . $post->postTitle . ' success!']);
     }
 }

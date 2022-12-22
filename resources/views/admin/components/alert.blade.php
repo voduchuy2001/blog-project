@@ -3,9 +3,9 @@
     <i class="dripicons-wrong me-2"></i> {{ session('error') }}
 </div>
 
-@elseif(session('message'))
+@elseif(session('success'))
 <div class="alert alert-success" role="alert">
-    <i class="dripicons-checkmark me-2"></i>{{ session('message') }}
+    <i class="dripicons-checkmark me-2"></i>{{ session('success') }}
 </div>
 
 @elseif(session('warning'))

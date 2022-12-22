@@ -48,7 +48,7 @@
                         <img class="avatar-lg rounded" src="{{ $category->fImageCat }}" alt="Image">
                     </td>
                     <td>
-                        {{-- {{$category->posts->count()}} --}}
+                        {{$category->posts->count()}}
                     </td>
                     <td class="table-action">
                         <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="action-icon"><button

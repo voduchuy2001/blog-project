@@ -40,7 +40,7 @@ class CategoryController extends Controller
             'slugCat' => Str::slug($request->nameCat),
         ]);
 
-        return redirect()->route('category.list')->with(['message' => 'Create category: ' . $category->nameCat . ' success!']);
+        return redirect()->route('category.list')->with(['success' => 'Create category: ' . $category->nameCat . ' success!']);
     }
 
     public function editCategory($id)
@@ -73,16 +73,19 @@ class CategoryController extends Controller
         $category->slugCat = Str::slug($request->nameCat);
         $category->save();
 
-        return redirect()->route('category.list')->with(['message' => 'Update category: ' . $category->nameCat . ' success!']);
+        return redirect()->route('category.list')->with(['success' => 'Update category: ' . $category->nameCat . ' success!']);
     }
 
     public function deleteCategory($id)
     {
         $category = Category::findOrFail($id);
-
-        File::delete($category->fImageCat);
-        $category->delete();
-
-        return redirect()->route('category.list')->with(['message' => 'Delete category: ' . $category->nameCat . ' success!']);
+        if ($category->posts->count() > 0) {
+            return redirect()->back()->with('warning', 'Can not delete category: ' . $category->nameCat . '. Please delete related posts!');
+        } else {
+            File::delete($category->fImageCat);
+            $category->delete();
+            
+            return redirect()->route('category.list')->with(['success' => 'Delete category: ' . $category->nameCat . ' success!']);
+        }
     }
 }
