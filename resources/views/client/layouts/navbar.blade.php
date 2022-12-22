@@ -58,16 +58,9 @@
                         <div class="main-menu text-center d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="category.html">Lifestyle</a></li>
-                                    <li><a href="category.html">Business</a></li>
-                                    <li><a href="category.html">Fashion</a></li>
-                                    <li><a href="category.html">Design</a></li>
-                                    <li><a href="category.html">Health</a></li>
-                                    <li><a href="category.html">Harmful</a></li>
-                                    <li><a href="category.html">Technology</a></li>
-                                    <li><a href="category.html">Travel</a></li>
-                                    <li><a href="category.html">Food</a></li>
-                                    <li><a href="category.html">Creative</a></li>
+                                    @foreach ($categories as $category)
+                                    <li><a href="category.html">{{$category->nameCat}}</a></li>
+                                    @endforeach
                                     <li><input class="d-lg-none" type="text" placeholder="Enter title..."></li>
                                 </ul>
                             </nav>
