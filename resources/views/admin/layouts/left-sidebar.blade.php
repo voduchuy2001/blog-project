@@ -37,8 +37,8 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="apps-chat.html" class="side-nav-link">
+            <li class="side-nav-item {{ request()->routeIs('setting.*') ? 'menuitem-active' : '' }}">
+                <a href="{{route('setting.editSetting')}}" class="side-nav-link">
                     <i class="uil-atom"></i>
                     <span> Site settings </span>
                 </a>

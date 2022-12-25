@@ -9,7 +9,7 @@
                             <li class="d-none d-lg-block">
                                 <div class="form-box f-right ">
                                     <form action="/ket-qua" method="get">
-                                        <input type="text" name="query" placeholder="Nhập tiêu đề bài viết...">
+                                        <input type="text" name="query" placeholder="Nhập từ khóa...">
                                         <div class="search-icon">
                                             <i class="ti-search"></i>
                                         </div>
@@ -35,9 +35,7 @@
                             @endif
                             <!-- Social -->
                             <div class="header-social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                @include('client.components.media')
                             </div>
                         </div>
                     </div>
@@ -68,7 +66,7 @@
                                     <li>
                                         <form action="/ket-qua" method="get">
                                             <input class="d-lg-none" type="text" name="query"
-                                                placeholder="Nhập tiêu đề bài viết...">
+                                                placeholder="Nhập từ khóa...">
                                         </form>
                                     </li>
                                 </ul>

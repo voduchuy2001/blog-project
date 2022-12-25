@@ -1,4 +1,7 @@
 @extends('client.layouts.app')
+@section('metaKey', $post->metaKey)
+@section('metaDes', $post->metaDes)
+@section('metaTitle', $post->metaTitle)
 @section('content')
 <!-- breadcrumb Start-->
 <div class="page-notification">
@@ -7,8 +10,8 @@
             <div class="col-lg-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="#">Bài viết: {{$post->postTitle}}</a></li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="">Bài viết: {{$post->postTitle}}</a></li>
                     </ol>
                 </nav>
             </div>
@@ -39,6 +42,21 @@
                         <p class="excert">
                             {!!$post->postContent!!}
                         </p>
+                    </div>
+                </div>
+                <div class="blog-author">
+                    <div class="media align-items-center">
+                        <img src="{{$post->user->avatar}}">
+                        <div class="media-body">
+                            <a href="{{$post->user->facebookContact}}" target="_blank">
+                                <h4>Viết bởi: {{$post->user->fullName}}</h4>
+                            </a>
+                            <figure>
+                                <figcaption class="blockquote-footer">
+                                    {{$post->user->aboutMe}}
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html lang="vi">
 
 <head>
     <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
-        Dưa Cosmetics
+        @yield('metaTitle', 'Dưa Cosmetics')
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="@yield('metaDes', 'Default meta description Dưa Cosmetics, Dưa Cosmetics')">
+    <meta name="keywords" content="@yield('metaKey', 'Default meta keywords Dưa Cosmetics, Dưa Cosmetics')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="client/assets/img/favicon.ico">
 

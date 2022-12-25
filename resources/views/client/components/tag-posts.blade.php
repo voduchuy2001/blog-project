@@ -1,4 +1,5 @@
 @extends('client.layouts.app')
+@section('metaTitle', $tagPost->nameTag)
 @section('content')
 <!-- breadcrumb Start-->
 <div class="page-notification">
@@ -7,8 +8,8 @@
             <div class="col-lg-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="#">Thẻ: {{$tagPost->nameTag}}</a></li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/">Thẻ: {{$tagPost->nameTag}}</a></li>
                     </ol>
                 </nav>
             </div>
@@ -42,7 +43,7 @@
                             <a href="{{route('post.single',['slugPost' => $post->slugPost])}}">
                                 <h4>{{$post->postTitle}}</h4>
                             </a>
-                            <p>{!!substr($post->postContent, 0, 100)!!}...</p>
+                            <p>{!!substr($post->metaDes, 0, 50)!!}...</p>
                         </div>
                     </div>
                 </div>

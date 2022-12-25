@@ -24,8 +24,9 @@ return new class extends Migration
             $table->string('slugPost');
 
             $table->integer('category_id');
+            $table->integer('user_id');
 
-            $table->string('meteDes')->nullable();
+            $table->string('metaDes')->nullable();
             $table->string('metaKey')->nullable();
             $table->string('metaTitle')->nullable();
 

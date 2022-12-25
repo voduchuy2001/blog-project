@@ -53,7 +53,7 @@
                                     <h3><a
                                             href="{{route('post.single',['slugPost' => $latestPost2->slugPost])}}">{{$latestPost2->postTitle}}</a>
                                     </h3>
-                                    <p class="normal">{!!substr($latestPost2->postContent, 0, 100)!!}...</p>
+                                    <p class="normal">{!!substr($latestPost2->metaDes, 0, 50)!!}...</p>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                         <a href="{{route('post.single',['slugPost' => $latestPost3->slugPost])}}">{{$latestPost3->postTitle}}
                                         </a>
                                     </h3>
-                                    <p class="normal">{!!substr($latestPost3->postContent, 0, 100)!!}...</p>
+                                    <p class="normal">{!!substr($latestPost3->metaDes, 0, 50)!!}...</p>
                                 </div>
                             </div>
                         </div>

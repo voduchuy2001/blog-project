@@ -10,9 +10,7 @@
                                 <div class="header-info-left d-flex justify-content-center">
                                     <!-- Social -->
                                     <div class="header-social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        @include('client.components.media')
                                     </div>
                                 </div>
                                 <div class="header-info-mid">

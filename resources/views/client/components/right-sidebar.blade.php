@@ -4,7 +4,7 @@
             <form action="/ket-qua" method="GET">
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <input type="text" name="query" class="form-control" placeholder='Nhập tiêu đề bài viết...'>
+                        <input type="text" name="query" class="form-control" placeholder='Nhập từ khóa...'>
                     </div>
                 </div>
                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Tìm

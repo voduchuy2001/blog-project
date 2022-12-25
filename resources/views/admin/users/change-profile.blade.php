@@ -27,13 +27,21 @@
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input placeholder="Email" id="email" type="email" readonly class="form-control" name="email"
-                                value="{{$user->email}}">
+                            <input placeholder="Email" id="email" type="email" readonly class="form-control"
+                                name="email" value="{{$user->email}}">
                             @error('email')
                             <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
 
+                        <div class="mb-3">
+                            <label for="avatar" class="form-label">Avatar</label>
+                            <input id="avatar" type="file" accept="image/*" class="form-control" name="avatar"
+                                value="{{$user->avatar}}">
+                            @error('avatar')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full name</label>

@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
@@ -49,8 +50,9 @@ class PostController extends Controller
             'postContent' => $request->postContent,
             'fImagePost' => 'uploads/posts/' . $featured_image_new_name,
             'category_id' => $request->category_id,
+            'user_id' => Auth::user()->id,
             'slugPost' => Str::slug($request->postTitle) . '-' . Str::random(20),
-            'meteDes' => $request->meteDes,
+            'metaDes' => $request->metaDes,
             'metaKey' => $request->metaKey,
             'metaTitle' => $request->metaTitle,
         ]);
@@ -107,6 +109,10 @@ class PostController extends Controller
         $post->postTitle = $request->postTitle;
         $post->postContent = $request->postContent;
         $post->category_id = $request->category_id;
+
+        $post->metaDes = $request->metaDes;
+        $post->metaKey = $request->metaKey;
+        $post->metaTitle = $request->metaTitle;
 
         $oldSlug = $post->slugPost;
         if ($request->postTitle) {

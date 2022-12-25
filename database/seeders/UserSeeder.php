@@ -20,7 +20,9 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'fullName' => 'Huong Mai',
             'email' => 'maithimyhuongfpt@gmail.com',
-            'phoneNumber'=>'0374159906',
+            'avatar' => 'uploads/users/avt.png',
+            'facebookContact' => 'https://www.facebook.com/mtmhuong.2001',
+            'phoneNumber' => '0374159906',
             'password' => Hash::make('admin123'),
         ]);
     }

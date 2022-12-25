@@ -101,8 +101,8 @@
                                     selector: 'textarea',
                                     skin: "oxide-dark",
                                     content_css: "dark",
-                                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount preview fullscreen',
-                                    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat | preview | fullscreen',
+                                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount fullscreen',
+                                    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat | fullscreen',
                                     file_picker_callback: elFinderBrowser
                                 });
                             </script>
@@ -156,10 +156,10 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="meteDes" class="form-label">Meta description</label>
-                            <input type="text" class="form-control" name="meteDes" placeholder="Meta description"
-                                id="postTitle" value="{{ old('meteDes') }}">
-                            @error('meteDes')
+                            <label for="metaDes" class="form-label">Meta description</label>
+                            <input type="text" class="form-control" name="metaDes" placeholder="Meta description"
+                                id="postTitle" value="{{ old('metaDes') }}">
+                            @error('metaDes')
                             <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Setting;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $settings = Setting::first();
         $categories = Category::orderBy('created_at', 'desc')->get();
 
         $featuredPosts = Post::orderBy('created_at', 'desc')
@@ -39,12 +41,14 @@ class HomeController extends Controller
             'latestPost2',
             'latestPost3',
             'latestPost45',
-            'popularPost'
+            'popularPost',
+            'settings',
         ));
     }
 
     public function singlePost($slugPost)
     {
+        $settings = Setting::first();
         $categories = Category::orderBy('created_at', 'desc')->get();
         $tags = Tag::orderBy('created_at', 'desc')->get();
 
@@ -62,11 +66,13 @@ class HomeController extends Controller
             'tags',
             'post',
             'relatedPosts',
+            'settings',
         ));
     }
 
     public function categoryPost($slugCat)
     {
+        $settings = Setting::first();
         $categories = Category::orderBy('created_at', 'desc')->get();
         $categoryPost = Category::where('slugCat', $slugCat)->first();
 
@@ -75,12 +81,14 @@ class HomeController extends Controller
         return view('client.components.category-posts', compact(
             'categories',
             'categoryPost',
-            'posts'
+            'posts',
+            'settings',
         ));
     }
 
     public function tagPost($slugTag)
     {
+        $settings = Setting::first();
         $categories = Category::orderBy('created_at', 'desc')->get();
         $tagPost = Tag::where('slugTag', $slugTag)->first();
         $posts = $tagPost->posts()->orderBy('created_at', 'desc')->paginate(10);
@@ -88,7 +96,8 @@ class HomeController extends Controller
         return view('client.components.tag-posts', compact(
             'categories',
             'tagPost',
-            'posts'
+            'posts',
+            'settings',
         ));
     }
 }

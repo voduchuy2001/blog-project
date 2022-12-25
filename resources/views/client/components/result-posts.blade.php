@@ -7,8 +7,8 @@
             <div class="col-lg-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="#">Tìm kiếm: {{$query}}</a></li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/">Tìm kiếm: {{$query}}</a></li>
                     </ol>
                 </nav>
             </div>
@@ -29,6 +29,7 @@
         <div class="row justify-content-lg-between">
             <div class="col-lg-8 col-md-8">
                 <!-- single-job-content -->
+                @if ($posts->count() > 0)
                 @foreach ($posts as $post)
                 <div class="single-job-items mb-30">
                     <div class="job-items">
@@ -41,11 +42,16 @@
                             <a href="{{route('post.single',['slugPost' => $post->slugPost])}}">
                                 <h4>{{$post->postTitle}}</h4>
                             </a>
-                            <p>{!!substr($post->postContent, 0, 100)!!}...</p>
+                            <p>{!!substr($post->metaDes, 0, 50)!!}...</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div class="single-job-items mb-30">
+                    <p>Không tìm thấy kết quả: {{$query}}</p>
+                </div>
+                @endif
             </div>
 
             @include('client.components.ads')

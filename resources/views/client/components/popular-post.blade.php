@@ -23,7 +23,7 @@
                             <a href="{{route('post.single',['slugPost' => $popularPost->slugPost])}}">
                                 <h4>{{$popularPost->postTitle}}</h4>
                             </a>
-                            <p>{!!substr($popularPost->postContent, 0, 100)!!}...</p>
+                            <p>{!!substr($popularPost->metaDes, 0, 50)!!}...</p>
                         </div>
                     </div>
                 </div>

@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string('instagramContact')->nullable();
             $table->string('youtubeContact')->nullable();
             $table->string('pinterestContact')->nullable();
-            $table->string('phoneNumber');
-            $table->string('fullName');
+            $table->string('phoneNumber')->nullable();
+            $table->string('fullName')->nullable();
+            $table->string('avatar')->nullable();
 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

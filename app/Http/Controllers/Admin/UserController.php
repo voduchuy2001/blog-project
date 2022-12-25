@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -21,10 +22,22 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'fullName' => 'required|string|max:35',
-            'email' => 'required|email|unique:users',
         ]);
 
         $user = Auth::user();
+
+        $oldAvatar = $user->avatar;
+        if ($request->avatar) {
+            File::delete($user->avatar);
+            $avatar = $request->avatar;
+            $avatar_new_name = time() . $avatar->getClientOriginalName();
+            $avatar->move('uploads/users/', $avatar_new_name);
+
+            $user->avatar = 'uploads/users/' . $avatar_new_name;
+        } else {
+            $user->avatar = $oldAvatar;
+        }
+
 
         $user->email = $request->email;
         $user->fullName = $request->fullName;
