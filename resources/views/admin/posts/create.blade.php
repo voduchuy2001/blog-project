@@ -39,9 +39,9 @@
 
                 <div class="tab-content">
                     <div class="tab-pane show active" id="home1">
-                        <div class="mt-3 mb-3">
+                        <div class="mb-3">
                             <label for="postTitle" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="postTitle" placeholder="Post title"
+                            <input maxlength="255" type="text" class="form-control" name="postTitle" placeholder="Post title"
                                 id="postTitle" value="{{ old('postTitle') }}">
                             @error('postTitle')
                             <span class="text-danger"> {{ $message }}</span>
@@ -50,7 +50,7 @@
 
                         <div class="mb-3">
                             <label for="shortDes" class="form-label">Short description</label>
-                            <input type="text" class="form-control" name="shortDes" placeholder="Short description"
+                            <input maxlength="255" type="text" class="form-control" name="shortDes" placeholder="Short description"
                                 id="shortDes" value="{{ old('shortDes') }}">
                             @error('shortDes')
                             <span class="text-danger"> {{ $message }}</span>
@@ -157,7 +157,7 @@
                     <div class="tab-pane" id="profile1">
                         <div class="mt-3 mb-3">
                             <label for="metaTitle" class="form-label">Meta title</label>
-                            <input type="text" class="form-control" name="metaTitle" placeholder="Meta title"
+                            <input maxlength="255" type="text" class="form-control" name="metaTitle" placeholder="Meta title"
                                 id="postTitle" value="{{ old('metaTitle') }}">
                             @error('metaTitle')
                             <span class="text-danger"> {{ $message }}</span>
@@ -166,7 +166,7 @@
 
                         <div class="mb-3">
                             <label for="metaDes" class="form-label">Meta description</label>
-                            <input type="text" class="form-control" name="metaDes" placeholder="Meta description"
+                            <input maxlength="255" type="text" class="form-control" name="metaDes" placeholder="Meta description"
                                 id="postTitle" value="{{ old('metaDes') }}">
                             @error('metaDes')
                             <span class="text-danger"> {{ $message }}</span>
@@ -175,7 +175,7 @@
 
                         <div class="mb-3">
                             <label for="metaKey" class="form-label">Meta keys</label>
-                            <input type="text" class="form-control" name="metaKey" placeholder="Meta key words"
+                            <input maxlength="255" type="text" class="form-control" name="metaKey" placeholder="Meta key words"
                                 id="postTitle" value="{{ old('metaKey') }}">
                             @error('metaKey')
                             <span class="text-danger"> {{ $message }}</span>

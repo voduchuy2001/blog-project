@@ -27,7 +27,7 @@
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input placeholder="Email" id="email" type="email" readonly class="form-control"
+                            <input maxlength="255" placeholder="Email" id="email" type="email" readonly class="form-control"
                                 name="email" value="{{$user->email}}">
                             @error('email')
                             <span class="text-danger"> {{ $message }}</span>
@@ -45,7 +45,7 @@
 
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full name</label>
-                            <input placeholder="Full name" id="fullName" type="text" class="form-control"
+                            <input maxlength="255" placeholder="Full name" id="fullName" type="text" class="form-control"
                                 name="fullName" value="{{$user->fullName}}">
                             @error('fullName')
                             <span class="text-danger"> {{ $message }}</span>
@@ -54,7 +54,7 @@
 
                         <div class="mb-3">
                             <label for="facebookContact" class="form-label">Link facebook</label>
-                            <input placeholder="Link facebook" type="text" id="facebookContact" class="form-control"
+                            <input maxlength="255" placeholder="Link facebook" type="text" id="facebookContact" class="form-control"
                                 name="facebookContact" value="{{$user->facebookContact}}">
                             @error('facebookContact')
                             <span class="text-danger"> {{ $message }}</span>
@@ -63,7 +63,7 @@
 
                         <div class="mb-3">
                             <label for="instagramContact" class="form-label">Link instagram</label>
-                            <input placeholder="Link instagram" type="text" id="instagramContact" class="form-control"
+                            <input maxlength="255" placeholder="Link instagram" type="text" id="instagramContact" class="form-control"
                                 name="instagramContact" value="{{$user->instagramContact}}">
                             @error('instagramContact')
                             <span class="text-danger"> {{ $message }}</span>
@@ -72,7 +72,7 @@
 
                         <div class="mb-3">
                             <label for="youtubeContact" class="form-label">Link youtube</label>
-                            <input placeholder="Link youtube" type="text" id="youtubeContact" class="form-control"
+                            <input maxlength="255" placeholder="Link youtube" type="text" id="youtubeContact" class="form-control"
                                 name="youtubeContact" value="{{$user->youtubeContact}}">
                             @error('youtubeContact')
                             <span class="text-danger"> {{ $message }}</span>
@@ -81,7 +81,7 @@
 
                         <div class="mb-3">
                             <label for="pinterestContact" class="form-label">Link pinterest</label>
-                            <input placeholder="Link pinterest" type="text" id="pinterestContact" class="form-control"
+                            <input maxlength="255" placeholder="Link pinterest" type="text" id="pinterestContact" class="form-control"
                                 name="pinterestContact" value="{{$user->pinterestContact}}">
                             @error('pinterestContact')
                             <span class="text-danger"> {{ $message }}</span>
@@ -99,7 +99,7 @@
 
                         <div class="mb-3">
                             <label for="aboutMe" class="form-label">About you</label>
-                            <textarea placeholder="About you" type="text" id="aboutMe" rows="5" class="form-control"
+                            <textarea maxlength="255" placeholder="About you" type="text" id="aboutMe" rows="5" class="form-control"
                                 name="aboutMe">{{$user->aboutMe}}</textarea>
                             @error('aboutMe')
                             <span class="text-danger"> {{ $message }}</span>

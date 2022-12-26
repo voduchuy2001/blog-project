@@ -11,7 +11,6 @@
     <meta name="description" content="@yield('metaDes')@yield('webDes')">
     <meta name="keywords" content="@yield('metaKey')@yield('webDes')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="client/assets/img/favicon.ico">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="client/assets/css/bootstrap.min.css">

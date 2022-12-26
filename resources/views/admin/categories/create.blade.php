@@ -22,10 +22,10 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="mt-3 mb-3">
+                <div class="mb-3">
                     <label for="nameCat" class="form-label">Category name</label>
                     <input type="text" class="form-control" id="nameCat" name="nameCat" placeholder="Category name"
-                        maxlength="32" value="{{ old('nameCat') }}">
+                        maxlength="255" value="{{ old('nameCat') }}">
                     @error('nameCat')
                     <span class="text-danger"> {{ $message }}</span>
                     @enderror

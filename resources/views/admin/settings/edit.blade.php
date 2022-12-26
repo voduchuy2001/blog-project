@@ -27,7 +27,7 @@
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="facebook" class="form-label">Site name</label>
-                            <input placeholder="webName" id="webName" type="text" class="form-control" name="webName"
+                            <input maxlength="255" placeholder="webName" id="webName" type="text" class="form-control" name="webName"
                                 value="{{$settings->webName}}">
                             @error('webName')
                             <span class="text-danger"> {{ $message }}</span>
@@ -36,7 +36,7 @@
 
                         <div class="mb-3">
                             <label for="webDes" class="form-label">Site description</label>
-                            <input placeholder="webDes" id="webDes" type="text" class="form-control" name="webDes"
+                            <input maxlength="255" placeholder="webDes" id="webDes" type="text" class="form-control" name="webDes"
                                 value="{{$settings->webDes}}">
                             @error('webDes')
                             <span class="text-danger"> {{ $message }}</span>
@@ -45,7 +45,7 @@
 
                         <div class="mb-3">
                             <label for="facebook" class="form-label">Facebook</label>
-                            <input placeholder="Facebook" id="facebook" type="text" class="form-control" name="facebook"
+                            <input maxlength="255" placeholder="Facebook" id="facebook" type="text" class="form-control" name="facebook"
                                 value="{{$settings->facebook}}">
                             @error('facebook')
                             <span class="text-danger"> {{ $message }}</span>
@@ -54,7 +54,7 @@
 
                         <div class="mb-3">
                             <label for="Youtube" class="form-label">Youtube</label>
-                            <input placeholder="Youtube" type="text" id="Youtube" class="form-control" name="youtube"
+                            <input maxlength="255" placeholder="Youtube" type="text" id="Youtube" class="form-control" name="youtube"
                                 value="{{$settings->youtube}}">
                             @error('Youtube')
                             <span class="text-danger"> {{ $message }}</span>
@@ -63,7 +63,7 @@
 
                         <div class="mb-3">
                             <label for="Instagram" class="form-label">Instagram</label>
-                            <input placeholder="Instagram" type="text" id="instagram" class="form-control"
+                            <input maxlength="255" placeholder="Instagram" type="text" id="instagram" class="form-control"
                                 name="instagram" value="{{$settings->instagram}}">
                             @error('instagram')
                             <span class="text-danger"> {{ $message }}</span>
@@ -72,7 +72,7 @@
 
                         <div class="mb-3">
                             <label for="Pinterest" class="form-label">Pinterest</label>
-                            <input placeholder="Pinterest" type="text" id="Pinterest" class="form-control"
+                            <input maxlength="255" placeholder="Pinterest" type="text" id="Pinterest" class="form-control"
                                 name="pinterest" value="{{$settings->pinterest}}">
                             @error('pinterest')
                             <span class="text-danger"> {{ $message }}</span>
@@ -90,7 +90,7 @@
 
                         <div class="mb-3">
                             <label for="altAds" class="form-label">Description of the advertisement</label>
-                            <input placeholder="Description of the advertisement" type="text" id="altAds"
+                            <input maxlength="255" placeholder="Description of the advertisement" type="text" id="altAds"
                                 class="form-control" name="altAds" value="{{$settings->altAds}}">
                             @error('altAds')
                             <span class="text-danger"> {{ $message }}</span>
@@ -99,7 +99,7 @@
 
                         <div class="mb-3">
                             <label for="backLinkAds" class="form-label">Ads backlinks</label>
-                            <input placeholder="Ads backlinks" type="text" id="backLinkAds" class="form-control"
+                            <input maxlength="255" placeholder="Ads backlinks" type="text" id="backLinkAds" class="form-control"
                                 name="backLinkAds" value="{{$settings->backLinkAds}}">
                             @error('backLinkAds')
                             <span class="text-danger"> {{ $message }}</span>

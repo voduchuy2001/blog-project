@@ -23,9 +23,9 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="mt-3 mb-3">
+                <div class="mb-3">
                     <label for="nameCat" class="form-label">Category name</label>
-                    <input type="text" class="form-control" name="nameCat" placeholder="Category name" maxlength="32"
+                    <input type="text" class="form-control" name="nameCat" placeholder="Category name" maxlength="255"
                         value="{{ $category->nameCat }}">
                     @error('nameCat')
                     <span class="text-danger"> {{ $message }}</span>

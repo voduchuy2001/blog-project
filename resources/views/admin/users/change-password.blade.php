@@ -23,7 +23,7 @@
         @method('put')
         <div class="mb-3">
             <label for="oldPassword" class="form-label">Old password</label>
-            <input placeholder="Old password" type="password" id="oldPassword" class="form-control" name="old_password">
+            <input maxlength="255" placeholder="Old password" type="password" id="oldPassword" class="form-control" name="old_password">
             @error('old_password')
             <span class="text-danger"> {{ $message }}</span>
             @enderror
@@ -31,7 +31,7 @@
 
         <div class="mb-3">
             <label for="newPassword" class="form-label">New password</label>
-            <input placeholder="New password" type="password" id="newPassword" class="form-control" name="password">
+            <input maxlength="255" placeholder="New password" type="password" id="newPassword" class="form-control" name="password">
             @error('password')
             <span class="text-danger"> {{ $message }}</span>
             @enderror
@@ -39,7 +39,7 @@
 
         <div class="mb-3">
             <label for="password_confirmation" class="form-label">Confirm password</label>
-            <input placeholder="Confirm password" type="password" id="password_confirmation" class="form-control"
+            <input maxlength="255" placeholder="Confirm password" type="password" id="password_confirmation" class="form-control"
                 name="password_confirmation">
         </div>
 
