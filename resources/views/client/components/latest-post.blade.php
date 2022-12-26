@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-tittle mb-35">
-                    <h2>Bài viết mới nhất</h2>
+                    <h2>Bài mới nhất</h2>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
                         <div class="single-slider">
                             <div class="trending-top mb-30">
                                 <div class="trend-top-img text-center">
-                                    <img src="{{$latestPost1->fImagePost}}" alt="">
+                                    <img src="{{$latestPost1->fImagePost}}" alt="Dưa Cosmetics">
                                     <div class="trend-top-cap">
                                         <span class="bgr" data-animation="fadeInUp" data-delay=".2s"
                                             data-duration="1000ms">{{$latestPost1->category->nameCat}}</span>
@@ -40,7 +40,7 @@
                         <div class="single-baner-nw2 mb-30 ">
                             <div class="banner-img-cap2">
                                 <div class="banner-img">
-                                    <img src="{{$latestPost2->fImagePost}}" alt="">
+                                    <img src="{{$latestPost2->fImagePost}}" alt="Dưa Cosmetics">
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                     <h3><a
                                             href="{{route('post.single',['slugPost' => $latestPost2->slugPost])}}">{{$latestPost2->postTitle}}</a>
                                     </h3>
-                                    <p class="normal">{!!substr($latestPost2->metaDes, 0, 50)!!}...</p>
+                                    <p class="normal">{{$latestPost2->shortDes}}...</p>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                         <a href="{{route('post.single',['slugPost' => $latestPost3->slugPost])}}">{{$latestPost3->postTitle}}
                                         </a>
                                     </h3>
-                                    <p class="normal">{!!substr($latestPost3->metaDes, 0, 50)!!}...</p>
+                                    <p class="normal">{{$latestPost3->shortDes}}...</p>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                         <div class="single-baner-nw2 mb-30 ">
                             <div class="banner-img-cap2">
                                 <div class="banner-img">
-                                    <img src="{{$latestPost3->fImagePost}}" alt="">
+                                    <img src="{{$latestPost3->fImagePost}}" alt="Dưa Cosmetics">
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                 <div class="single-baner-nw2 mb-30 text-center">
                     <div class="banner-img-cap2">
                         <div class="banner-img">
-                            <img src="{{$latestPost45->fImagePost}}" alt="">
+                            <img src="{{$latestPost45->fImagePost}}" alt="Dưa Cosmetics">
                         </div>
                         <div class="banner-cap2">
                             <p>{{$latestPost45->category->nameCat}}</p>

@@ -6,7 +6,7 @@
                     @foreach ($categories as $category)
                     <div class="single-news-slider">
                         <div class="news-img">
-                            <a href="{{route('category.single',['slugCat' => $category->slugCat])}}"><img height="200" width="400" src="{{$category->fImageCat}}" alt=""></a>
+                            <a href="{{route('category.single',['slugCat' => $category->slugCat])}}"><img height="200" width="400" src="{{$category->fImageCat}}" alt="Dưa Cosmetics"></a>
                         </div>
                     </div>
                     @endforeach

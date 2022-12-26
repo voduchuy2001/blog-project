@@ -17,6 +17,8 @@ class SettingSeeder extends Seeder
     {
         DB::table('settings')->insert([
             'ads' => 'uploads/settings/Ad.png',
+            'webName' => 'Dưa Cosmetics',
+            'webDes' => 'Dưa Cosmetics',
         ]);
     }
 }

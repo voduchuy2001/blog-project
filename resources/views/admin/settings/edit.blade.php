@@ -26,6 +26,24 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="mb-3">
+                            <label for="facebook" class="form-label">Site name</label>
+                            <input placeholder="webName" id="webName" type="text" class="form-control" name="webName"
+                                value="{{$settings->webName}}">
+                            @error('webName')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="webDes" class="form-label">Site description</label>
+                            <input placeholder="webDes" id="webDes" type="text" class="form-control" name="webDes"
+                                value="{{$settings->webDes}}">
+                            @error('webDes')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="facebook" class="form-label">Facebook</label>
                             <input placeholder="Facebook" id="facebook" type="text" class="form-control" name="facebook"
                                 value="{{$settings->facebook}}">
@@ -66,6 +84,24 @@
                             <input id="ads" type="file" accept="image/*" class="form-control" name="ads"
                                 value="{{$settings->ads}}">
                             @error('ads')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="altAds" class="form-label">Description of the advertisement</label>
+                            <input placeholder="Description of the advertisement" type="text" id="altAds"
+                                class="form-control" name="altAds" value="{{$settings->altAds}}">
+                            @error('altAds')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="backLinkAds" class="form-label">Ads backlinks</label>
+                            <input placeholder="Ads backlinks" type="text" id="backLinkAds" class="form-control"
+                                name="backLinkAds" value="{{$settings->backLinkAds}}">
+                            @error('backLinkAds')
                             <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>

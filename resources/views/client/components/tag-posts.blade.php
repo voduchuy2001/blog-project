@@ -43,7 +43,7 @@
                             <a href="{{route('post.single',['slugPost' => $post->slugPost])}}">
                                 <h4>{{$post->postTitle}}</h4>
                             </a>
-                            <p>{!!substr($post->metaDes, 0, 50)!!}...</p>
+                            <p>{{$post->shortDes}}...</p>
                         </div>
                     </div>
                 </div>

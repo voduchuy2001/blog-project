@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('postTitle');
+            $table->string('shortDes');
             $table->longText('postContent');
             $table->enum('status', ['featured', 'non-featured']);
             $table->string('fImagePost');

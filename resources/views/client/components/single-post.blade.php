@@ -26,7 +26,7 @@
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
                     <div class="feature-img">
-                        <img class="img-fluid" src="{{$post->fImagePost}}" alt="">
+                        <img class="img-fluid" src="{{$post->fImagePost}}" alt="Dưa Cosmetics">
                     </div>
                     <div class="blog_details">
                         <h2 style="color: #2d2d2d;">{{$post->postTitle}}

@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'fullName' => 'Huong Mai',
             'email' => 'maithimyhuongfpt@gmail.com',
             'avatar' => 'uploads/users/avt.png',
+            'aboutMe' => '"Nhạt"',
             'facebookContact' => 'https://www.facebook.com/mtmhuong.2001',
             'phoneNumber' => '0374159906',
             'password' => Hash::make('admin123'),

@@ -34,20 +34,21 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="{{route('post.single',['slugPost' => $post->slugPost])}}"><img height="150" width="200" src="{{$post->fImagePost}}" alt=""></a>
+                            <a href="{{route('post.single',['slugPost' => $post->slugPost])}}"><img height="150"
+                                    width="200" src="{{$post->fImagePost}}" alt="Dưa Cosmetics"></a>
                         </div>
                         <div class="job-tittle">
                             <span>{{$post->category->nameCat}}</span>
                             <a href="{{route('post.single',['slugPost' => $post->slugPost])}}">
                                 <h4>{{$post->postTitle}}</h4>
                             </a>
-                            <p>{!!substr($post->metaDes, 0, 50)!!}...</p>
+                            <p>{{$post->shortDes}}...</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
-            
+
             @include('client.components.ads')
         </div>
     </div>

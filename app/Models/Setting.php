@@ -16,6 +16,10 @@ class Setting extends Model
         'youtube',
         'pinterest',
         'phone',
-        'ads'
+        'ads',
+        'backLinkAds',
+        'altAds',
+        'webName',
+        'webDes',
     ];
 }

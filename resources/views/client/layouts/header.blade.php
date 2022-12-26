@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
-        @yield('metaTitle', 'Dưa Cosmetics')
+        @yield('metaTitle', $settings->webName)
     </title>
-    <meta name="description" content="@yield('metaDes', 'Default meta description Dưa Cosmetics, Dưa Cosmetics')">
-    <meta name="keywords" content="@yield('metaKey', 'Default meta keywords Dưa Cosmetics, Dưa Cosmetics')">
+    <meta name="description" content="@yield('metaDes')@yield('webDes')">
+    <meta name="keywords" content="@yield('metaKey')@yield('webDes')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="client/assets/img/favicon.ico">
 

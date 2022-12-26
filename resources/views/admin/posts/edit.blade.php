@@ -49,6 +49,15 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="shortDes" class="form-label">Short description</label>
+                            <input type="text" class="form-control" name="shortDes" placeholder="Short description"
+                                id="shortDes" value="{{ $post->shortDes }}">
+                            @error('shortDes')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="fImagePost" class="form-label">Featured image</label>
                             <input type="file" accept="image/*" class="form-control" name="fImagePost" id="fImagePost"
                                 value="{{ $post->fImagePost }}">

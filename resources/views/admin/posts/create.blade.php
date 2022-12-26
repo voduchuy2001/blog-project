@@ -49,6 +49,15 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="shortDes" class="form-label">Short description</label>
+                            <input type="text" class="form-control" name="shortDes" placeholder="Short description"
+                                id="shortDes" value="{{ old('shortDes') }}">
+                            @error('shortDes')
+                            <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="fImagePost" class="form-label">Featured image</label>
                             <input type="file" accept="image/*" class="form-control" name="fImagePost" id="fImagePost"
                                 value="{{ old('fImagePost') }}">
@@ -59,7 +68,7 @@
 
                         <div class="mb-3">
                             <label for="postContent" class="form-label">Post Content</label>
-                            <textarea name="postContent" id="postContent" placeholder="Enter your content...">
+                            <textarea name="postContent" id="postContent">
 
                                 </textarea>
                             <script>

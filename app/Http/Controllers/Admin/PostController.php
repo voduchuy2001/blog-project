@@ -36,6 +36,7 @@ class PostController extends Controller
         $this->validate($request, [
             'postTitle' => 'required',
             'postContent' => 'required',
+            'shortDes' => 'required',
             'fImagePost' => 'required|image',
             'category_id' => 'required',
             'tags' => 'required',
@@ -47,6 +48,7 @@ class PostController extends Controller
 
         $post = Post::create([
             'postTitle' => $request->postTitle,
+            'shortDes' => $request->shortDes,
             'postContent' => $request->postContent,
             'fImagePost' => 'uploads/posts/' . $featured_image_new_name,
             'category_id' => $request->category_id,
@@ -107,6 +109,7 @@ class PostController extends Controller
         }
 
         $post->postTitle = $request->postTitle;
+        $post->shortDes = $request->shortDes;
         $post->postContent = $request->postContent;
         $post->category_id = $request->category_id;
 

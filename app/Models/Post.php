@@ -19,6 +19,7 @@ class Post extends Model
         'metaDes',
         'metaKey',
         'metaTitle',
+        'shortDes',
         'category_id',
         'user_id',
     ];

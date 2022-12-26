@@ -7,7 +7,7 @@
                     <div class="single-baner-nw mb-30 text-center">
                         <div class="banner-img-cap">
                             <div class="banner-img">
-                                <img height="300" width="400" src="{{$featuredPost->fImagePost}}" alt="">
+                                <img height="300" width="400" src="{{$featuredPost->fImagePost}}" alt="Dưa Cosmetics">
                             </div>
                             <div class="banner-cap">
                                 <p>{{$featuredPost->category->nameCat}}</p>

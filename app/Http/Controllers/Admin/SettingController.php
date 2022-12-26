@@ -36,6 +36,10 @@ class SettingController extends Controller
         $settings->youtube = $request->youtube;
         $settings->instagram = $request->instagram;
         $settings->pinterest = $request->pinterest;
+        $settings->altAds = $request->altAds;
+        $settings->backLinkAds = $request->backLinkAds;
+        $settings->webName = $request->webName;
+        $settings->webDes = $request->webDes;
 
         $settings->save();
         return redirect()->back()->with('success', 'Update settings success!');

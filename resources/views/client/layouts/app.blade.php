@@ -1,4 +1,5 @@
-    @include('client.layouts.header')
+@include('client.layouts.header')
+
 <body>
     <!-- ? Preloader Start -->
     <div id="preloader-active">
@@ -6,11 +7,11 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="client/assets/img/logo/loder.png" alt="">
+                    <img src="client/assets/img/logo/loder.png" alt="Dưa Cosmetics">
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <!-- Preloader Start-->
     <header>
         @include('client.layouts.navbar')
@@ -19,9 +20,10 @@
         @yield('content')
 
     </main>
-    
-    
-       @include('client.layouts.footer')
-    
-    </body>
+
+
+    @include('client.layouts.footer')
+
+</body>
+
 </html>
