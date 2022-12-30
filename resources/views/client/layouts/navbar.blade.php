@@ -20,7 +20,7 @@
                         <div class="header-info-mid">
                             <!-- logo -->
                             <div class="logo">
-                                <a href="/"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                                <a href="/"><img src="client/assets/img/logo/logo1.png" alt=""></a>
                             </div>
                         </div>
                         <div class="header-info-right d-flex align-items-center">
@@ -48,11 +48,11 @@
                     <div class="col-12">
                         <!-- logo 2 -->
                         <div class="logo2">
-                            <a href="/"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                            <a href="/"><img src="client/assets/img/logo/logo1.png" alt=""></a>
                         </div>
                         <!-- logo 3 -->
                         <div class="logo3 d-block d-sm-none">
-                            <a href="/"><img src="client/assets/img/logo/logo-mobile.png" alt=""></a>
+                            <a href="/"><img src="client/assets/img/logo/logo-mobile1.png" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu text-center d-none d-lg-block">

@@ -1,23 +1,23 @@
 @if ($paginator->hasPages())
 <nav class="mb-3">
-    <ul class="pagination pagination-rounded mb-0">
+    <ul class="pagination justify-content-center">
         {{-- Custom previous --}}
         @if ($paginator->onFirstPage())
         <li class="page-item disabled">
             <a class="page-link" href="javascript: void(0);" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
+                <span aria-hidden="true">&laquo; Prev</span>
             </a>
         </li>
         @else
         <li class="page-item">
             <a class="page-link" href="{{ $paginator->previousPageUrl() }}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
+                <span aria-hidden="true">&laquo; Prev</span>
             </a>
         </li>
         @endif
         {{-- Custom previous --}}
 
-        @foreach ($elements as $element)
+        {{-- @foreach ($elements as $element)
 
         @if (is_string($element))
         <li class="page-item disabled"><a class="page-link">{{ $element }}</a></li>
@@ -34,19 +34,19 @@
         @endif
         @endforeach
         @endif
-        @endforeach
+        @endforeach --}}
 
         {{-- Custom next --}}
         @if ($paginator->hasMorePages())
         <li class="page-item">
             <a class="page-link" href="{{ $paginator->nextPageUrl() }}" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
+                <span aria-hidden="true">Next &raquo;</span>
             </a>
         </li>
         @else
         <li class="page-item disabled">
             <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
+                <span aria-hidden="true">Next &raquo;</span>
             </a>
         </li>
         @endif

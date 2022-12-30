@@ -12,6 +12,7 @@
     <meta name="keywords" content="@yield('metaKey')@yield('webDes')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="shortcut icon" href="client/assets/img/favicon.ico" type="image/x-icon">
     <!-- CSS here -->
     <link rel="stylesheet" href="client/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="client/assets/css/owl.carousel.min.css">

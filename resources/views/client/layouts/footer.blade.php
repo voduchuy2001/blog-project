@@ -16,7 +16,7 @@
                                 <div class="header-info-mid">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="/"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                                        <a href="/"><img src="client/assets/img/logo/logo1.png" alt=""></a>
                                     </div>
                                 </div>
                             </div>

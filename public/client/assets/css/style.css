@@ -2998,9 +2998,6 @@ hr {
 /* line 956, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
 .section-tittle::before {
   position: absolute;
-  content: "";
-  height: 1px;
-  width: 77%;
   background: #C7D2D8;
   right: 0;
   top: 50%;

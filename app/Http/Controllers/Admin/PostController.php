@@ -34,7 +34,7 @@ class PostController extends Controller
     public function storePost(Request $request)
     {
         $this->validate($request, [
-            'postTitle' => 'required',
+            'postTitle' => 'required|unique:posts',
             'postContent' => 'required',
             'shortDes' => 'required',
             'fImagePost' => 'required|image',
@@ -53,7 +53,7 @@ class PostController extends Controller
             'fImagePost' => 'uploads/posts/' . $featured_image_new_name,
             'category_id' => $request->category_id,
             'user_id' => Auth::user()->id,
-            'slugPost' => Str::slug($request->postTitle) . '-' . Str::random(20),
+            'slugPost' => Str::slug($request->postTitle),
             'metaDes' => $request->metaDes,
             'metaKey' => $request->metaKey,
             'metaTitle' => $request->metaTitle,
@@ -82,7 +82,7 @@ class PostController extends Controller
     public function updatePost(Request $request, $id)
     {
         $this->validate($request, [
-            'postTitle' => 'required',
+            'postTitle' => 'required|unique:posts',
             'postContent' => 'required',
             'category_id' => 'required',
             'tags' => 'required',
@@ -119,7 +119,7 @@ class PostController extends Controller
 
         $oldSlug = $post->slugPost;
         if ($request->postTitle) {
-            $post->slugPost = Str::slug($request->postTitle) . '-' . Str::random(20);
+            $post->slugPost = Str::slug($request->postTitle);
         } else {
             $post->slug = $oldSlug;
         }

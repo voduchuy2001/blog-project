@@ -169,15 +169,15 @@ var testimonial = $('.h1-testimonial-active');
   $('.banner-slider-active').slick({
     dots: false,
     infinite: true,
-    speed: 1000,
-    autoplaySpeed: 3500,
+    speed: 2500,
+    autoplaySpeed: 2500,
     autoplay:true,
     loop:true,
     arrows: false,
     prevArrow: '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 1024,
@@ -219,12 +219,12 @@ var testimonial = $('.h1-testimonial-active');
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 400,
-    arrows: true,
+    speed: 2500,
+    arrows: false,
     prevArrow: '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 1024,

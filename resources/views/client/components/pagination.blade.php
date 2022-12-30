@@ -11,13 +11,13 @@
                             @if ($paginator->onFirstPage())
                             <li class="page-item disabled">
                                 <a class="page-link" href="javascript: void(0);" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
+                                    <span aria-hidden="true">&laquo; Trước đó</span>
                                 </a>
                             </li>
                             @else
                             <li class="page-item">
                                 <a class="page-link" href="{{ $paginator->previousPageUrl() }}" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
+                                    <span aria-hidden="true">&laquo; Trước đó</span>
                                 </a>
                             </li>
                             @endif
@@ -27,13 +27,13 @@
                             @if ($paginator->hasMorePages())
                             <li class="page-item">
                                 <a class="page-link" href="{{ $paginator->nextPageUrl() }}" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
+                                    <span aria-hidden="true">Tiếp theo&raquo;</span>
                                 </a>
                             </li>
                             @else
                             <li class="page-item disabled">
                                 <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
+                                    <span aria-hidden="true">Tiếp theo&raquo;</span>
                                 </a>
                             </li>
                             @endif
