@@ -8,7 +8,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="/">Tìm kiếm: {{$query}}</a></li>
+                        <li class="breadcrumb-item"><a href="/">Kết quả tìm kiếm {{$query}}</a></li>
                     </ol>
                 </nav>
             </div>
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-tittle mb-35">
-                    <h2>Tìm kiếm: {{$query}}</h2>
+                    <h2>Kết quả tìm kiếm</h2>
                 </div>
             </div>
         </div>
