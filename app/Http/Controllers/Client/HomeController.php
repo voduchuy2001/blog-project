@@ -52,7 +52,7 @@ class HomeController extends Controller
         $categories = Category::orderBy('created_at', 'desc')->get();
         $tags = Tag::orderBy('created_at', 'desc')->get();
 
-        $post = Post::where('slugPost', $slugPost)->first();
+        $post = Post::where('slugPost', $slugPost)->firstOrFail();
         $post->increment('countViews');
 
         $relatedPosts = Post::orderBy('countViews', 'desc')
@@ -74,7 +74,7 @@ class HomeController extends Controller
     {
         $settings = Setting::first();
         $categories = Category::orderBy('created_at', 'desc')->get();
-        $categoryPost = Category::where('slugCat', $slugCat)->first();
+        $categoryPost = Category::where('slugCat', $slugCat)->firstOrFail();
 
         $posts = $categoryPost->posts()->orderBy('created_at', 'desc')->paginate(10);
 
@@ -90,7 +90,7 @@ class HomeController extends Controller
     {
         $settings = Setting::first();
         $categories = Category::orderBy('created_at', 'desc')->get();
-        $tagPost = Tag::where('slugTag', $slugTag)->first();
+        $tagPost = Tag::where('slugTag', $slugTag)->firstOrFail();
         $posts = $tagPost->posts()->orderBy('created_at', 'desc')->paginate(10);
 
         return view('client.components.tag-posts', compact(
